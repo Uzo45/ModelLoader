@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Present Model.unity
     guid: 9916e25ce249bce45b16e36de02160fc
+  - enabled: 1
+    path: Assets/Scenes/Present Pic.unity
+    guid: 7735669ad41cebe4083cfb5a8e089353
+  - enabled: 1
+    path: Assets/Scenes/Present Video.unity
+    guid: 6485b35315be69f4fa3cd6b71f0a3d84
   m_configObjects: {}

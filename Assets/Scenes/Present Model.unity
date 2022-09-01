@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44402185, g: 0.49316466, b: 0.57223153, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -225,6 +225,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -717,8 +718,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1697270221}
-        m_TargetAssemblyTypeName: Placemodel, Assembly-CSharp
+      - m_Target: {fileID: 1697270224}
+        m_TargetAssemblyTypeName: JsonModels, Assembly-CSharp
         m_MethodName: onClickReturnToInput
         m_Mode: 1
         m_Arguments:
@@ -938,6 +939,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1697270222}
   - component: {fileID: 1697270221}
+  - component: {fileID: 1697270223}
+  - component: {fileID: 1697270224}
   m_Layer: 0
   m_Name: Code Holder
   m_TagString: Untagged
@@ -952,7 +955,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697270220}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0aba7e6c06b86c34db56a53a92c78042, type: 3}
   m_Name: 
@@ -975,6 +978,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1697270223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697270220}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 819cb551f8e778e4584b8f48193b5307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1697270224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697270220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de4a2a324c74fff4bab2dd84ed5ae235, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Gparent: {fileID: 2127644542}
+  path: {fileID: 417530069}
+  errorMessages: {fileID: 645797470}
 --- !u!1 &1871405331
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,0 +1,74 @@
+{
+  "Keys": {
+    "Chapel-0064": {
+      "PathType": 0,
+      "VidPath": "",
+      "ModelPath": "C:\\Users\\Public\\JET\\3d models obj\\Chapel-0064.obj",
+      "PicPath": "",
+      "Duration": 0
+    },
+    "AlabamaHall-0023": {
+      "PathType": 0,
+      "VidPath": "",
+      "ModelPath": "C:\\Users\\Public\\JET\\3d models obj\\AlabamaHall-0023.obj",
+      "PicPath": "",
+      "Duration": 0
+    },
+    "HuntingdonBuilding-0026": {
+      "PathType": 0,
+      "VidPath": "",
+      "ModelPath": "C:\\Users\\Public\\JET\\3d models obj\\HuntingdonBuilding-0026.obj",
+      "PicPath": "",
+      "Duration": 0
+    },
+    "JohnA-AndrewMemorialHospital-0004": {
+      "PathType": 0,
+      "VidPath": "",
+      "ModelPath": "C:\\Users\\Public\\JET\\3d models obj\\JohnA-AndrewMemorialHospital-0004.obj",
+      "PicPath": "",
+      "Duration": 0
+    },
+    "PorterHall-0013": {
+      "PathType": 0,
+      "VidPath": "",
+      "ModelPath": "C:\\Users\\Public\\JET\\3d models obj\\PorterHall-0013.obj",
+      "PicPath": "",
+      "Duration": 0
+    },
+    "Robert R Taylor": {
+      "PathType": 1,
+      "VidPath": "",
+      "ModelPath": "lol",
+      "PicPath": "C:\\Users\\Public\\JET\\OriginalChapel\\Robert R Taylor.jpg",
+      "Duration": 0
+    },
+    "MixedPicAndModel": {
+      "PathType": 3,
+      "VidPath": "",
+      "ModelPath": "C:\\Users\\Public\\JET\\3d models obj\\Chapel-0064.obj",
+      "PicPath": "C:\\Users\\Public\\JET\\OriginalChapel\\Robert R Taylor.jpg",
+      "Duration": 1
+    },
+    "Space Channel 5": {
+      "PathType": 2,
+      "VidPath": "C:\\Users\\uanae\\Videos\\Captures\\Space Channel 5 Part 2 2022-06-22 00-27-25.mp4",
+      "ModelPath": "lol",
+      "PicPath": "",
+      "Duration": 3
+    },
+    "Melty Combo": {
+      "PathType": 2,
+      "VidPath": "C:\\Users\\uanae\\Videos\\Captures\\CielCornerMaxDamage.mp4",
+      "ModelPath": "lol",
+      "PicPath": "",
+      "Duration": 3
+    },
+    "Melty Combo 2": {
+      "PathType": 6,
+      "VidPath": "C:\\Users\\uanae\\Videos\\Captures\\CielCornerMaxDamage.mp4",
+      "ModelPath": "C:\\Users\\Public\\JET\\testing\\Neco_Arc.obj",
+      "PicPath": "C:\\Users\\Public\\JET\\testing\\melty pic.jpg",
+      "Duration": 1
+    }
+  }
+}

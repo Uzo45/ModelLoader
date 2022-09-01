@@ -13,7 +13,7 @@ public class GetKey : MonoBehaviour
         if(keyInput.text != null)
         {
             KeyManager.Key = keyInput.text;
-            SceneManager.LoadScene("Present Model");
+            KeyManager.findScene();
         }
         else
             Debug.Log("Input is null");
