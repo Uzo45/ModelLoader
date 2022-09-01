@@ -17,13 +17,7 @@ public class KeyManager : MonoBehaviour
 
     public enum FileType
     {
-        model,
-        pic,
-        vid,
-        pic_model,
-        pic_vid,
-        model_vid,
-        All
+        model, pic, vid, pic_model, pic_vid, model_vid, All
     }
 
     [System.Serializable]
@@ -83,28 +77,29 @@ public class KeyManager : MonoBehaviour
                 SceneManager.LoadScene("Present Video");
                 break;
             case FileType.pic_model:
-                timing("Present Pic", "Present Model");
+                Switch2Scenes("Present Pic", "Present Model");
                 break;
             case FileType.model_vid:
-                timing("Present Model", "Present Video");
+                Switch2Scenes("Present Model", "Present Video");
                 break;
             case FileType.pic_vid:
-                timing("Present Pic", "Present Video");
+                Switch2Scenes("Present Pic", "Present Video");
                 break;
             case FileType.All:
-                timing();
+                SwitchAllScenes();
                 break;
         }
     }
 
-    private static void timing(string scene1, string scene2)
+    private static void Switch2Scenes(string scene1, string scene2)
     {
         SceneManager.LoadScene(scene1);
+        Debug.Log("Hi");
         Thread.Sleep(pathsFromKeys.Keys[Key].Duration * 60000);
         SceneManager.LoadScene(scene2);
     }
 
-    private static void timing()
+    private static void SwitchAllScenes()
     {
         SceneManager.LoadScene("Present Pic");
         Thread.Sleep(pathsFromKeys.Keys[Key].Duration * 60000);
