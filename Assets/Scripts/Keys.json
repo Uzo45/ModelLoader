@@ -49,6 +49,13 @@
       "PicPath": "C:\\Users\\Public\\JET\\OriginalChapel\\Robert R Taylor.jpg",
       "Duration": 1
     },
+    "MixedModelAndVideo": {
+      "PathType": 5,
+      "VidPath": "C:\\Users\\uanae\\Videos\\Captures\\CielCornerMaxDamage.mp4",
+      "ModelPath": "C:\\Users\\Public\\JET\\3d models obj\\Chapel-0064.obj",
+      "PicPath": "",
+      "Duration": 3
+    },
     "Space Channel 5": {
       "PathType": 2,
       "VidPath": "C:\\Users\\uanae\\Videos\\Captures\\Space Channel 5 Part 2 2022-06-22 00-27-25.mp4",

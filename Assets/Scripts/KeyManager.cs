@@ -14,6 +14,8 @@ public class KeyManager : MonoBehaviour
     public static string Key;
     static string json = File.ReadAllText(Application.dataPath + "/Scripts/Keys.json");
     public static KeyParse pathsFromKeys = JsonConvert.DeserializeObject<KeyParse>(json);
+    public static bool change2Scenes = false;
+    public static string secondScene;
 
     public enum FileType
     {
@@ -36,33 +38,6 @@ public class KeyManager : MonoBehaviour
         public int Duration { get; set; }
     }
 
-    public static string OutputPathF()
-    {
-        return Findfile(Key);
-    }
-
-    public static string OutputPathJ()
-    {
-        return JsonParse(Key);
-    }
-
-    private static string JsonParse(string key)
-    {
-        switch (pathsFromKeys.Keys[key].PathType)
-        {
-            case FileType.model:
-                return pathsFromKeys.Keys[key].ModelPath;
-                break;
-            case FileType.pic:
-                return pathsFromKeys.Keys[key].PicPath;
-                break;
-            case FileType.vid:
-                return pathsFromKeys.Keys[key].VidPath;
-                break;
-        }
-        return "Nothing";
-    }
-
     public static void findScene()
     {
         switch (pathsFromKeys.Keys[Key].PathType)
@@ -77,13 +52,22 @@ public class KeyManager : MonoBehaviour
                 SceneManager.LoadScene("Present Video");
                 break;
             case FileType.pic_model:
-                Switch2Scenes("Present Pic", "Present Model");
+                change2Scenes = true;
+                SceneManager.LoadScene("Present Pic");
+                secondScene = "Present Model";
+                //Switch2Scenes("Present Pic", "Present Model");
                 break;
             case FileType.model_vid:
-                Switch2Scenes("Present Model", "Present Video");
+                change2Scenes = true;
+                SceneManager.LoadScene("Present Model");
+                secondScene = "Present Video";
+                //Switch2Scenes("Present Model", "Present Video");
                 break;
             case FileType.pic_vid:
-                Switch2Scenes("Present Pic", "Present Video");
+                change2Scenes = true;
+                SceneManager.LoadScene("Present Pic");
+                secondScene = "Present Video";
+                //Switch2Scenes("Present Pic", "Present Video");
                 break;
             case FileType.All:
                 SwitchAllScenes();
@@ -91,81 +75,19 @@ public class KeyManager : MonoBehaviour
         }
     }
 
-    private static void Switch2Scenes(string scene1, string scene2)
+    public static IEnumerator Switch2Scenes()
     {
-        SceneManager.LoadScene(scene1);
-        Debug.Log("Hi");
-        Thread.Sleep(pathsFromKeys.Keys[Key].Duration * 60000);
-        SceneManager.LoadScene(scene2);
+        yield return new WaitForSeconds(5); // this will make it wait 5 second then execute the code below
+        SceneManager.LoadScene(secondScene);
+        change2Scenes = false;
     }
 
-    private static void SwitchAllScenes()
+    public static void SwitchAllScenes()
     {
         SceneManager.LoadScene("Present Pic");
-        Thread.Sleep(pathsFromKeys.Keys[Key].Duration * 60000);
+        //StartCoroutine(delay());
         SceneManager.LoadScene("Present Model");
-        Thread.Sleep(pathsFromKeys.Keys[Key].Duration * 60000);
+        //StartCoroutine(delay());
         SceneManager.LoadScene("Present Video");
-    }
-
-    private static string Findfile(string Key)
-    {
-        //var directory = @"C:\Users\Public\JET\3d models obj";
-        var directory = Application.dataPath;
-        int compare;
-        bool inFile = false;
-        string target = "", all = directory + "\\" + Key;
-        string path;
-
-        foreach (string file in Directory.EnumerateFiles(directory, "*.obj"))
-        {
-            compare = stringCompare(file, all);
-            if (compare == 4)
-            {
-                target = file;
-                inFile = true;
-                break;
-            }
-        }
-
-        if (inFile)
-        {
-            path = target;
-        }
-        else
-        {
-            path = "No Path";
-            ErrorManager.WirteInFile("Path was not found\n");
-        }
-
-        return path;
-    }
-
-    private static int stringCompare(string str1, string str2)
-    {
-
-        int l1 = str1.Length;
-        int l2 = str2.Length;
-        int lmin = l1 - l2;
-
-        for (int i = 0; i < lmin; i++)
-        {
-            int str1_ch = str1[i];
-            int str2_ch = str2[i];
-
-            if (str1_ch != str2_ch)
-            {
-                return str1_ch - str2_ch;
-            }
-        }
-
-        if (l1 != l2)
-        {
-            return l1 - l2;
-        }
-        else
-        {
-            return 0;
-        }
     }
 }
