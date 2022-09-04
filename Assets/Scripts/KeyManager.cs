@@ -15,7 +15,9 @@ public class KeyManager : MonoBehaviour
     static string json = File.ReadAllText(Application.dataPath + "/Scripts/Keys.json");
     public static KeyParse pathsFromKeys = JsonConvert.DeserializeObject<KeyParse>(json);
     public static bool change2Scenes = false;
+    public static bool changeAllScene = false;
     public static string secondScene;
+    //public static string ThirdScene;
 
     public enum FileType
     {
@@ -70,24 +72,30 @@ public class KeyManager : MonoBehaviour
                 //Switch2Scenes("Present Pic", "Present Video");
                 break;
             case FileType.All:
-                SwitchAllScenes();
+                changeAllScene = true;
+                SceneManager.LoadScene("Present Pic");
+                //SwitchAllScenes();
                 break;
         }
     }
 
     public static IEnumerator Switch2Scenes()
     {
-        yield return new WaitForSeconds(5); // this will make it wait 5 second then execute the code below
+        yield return new WaitForSeconds(pathsFromKeys.Keys[Key].Duration); // this will make it wait 5 second then execute the code below
         SceneManager.LoadScene(secondScene);
         change2Scenes = false;
     }
 
-    public static void SwitchAllScenes()
+    public static IEnumerator SwitchScenes1()
     {
-        SceneManager.LoadScene("Present Pic");
-        //StartCoroutine(delay());
+        yield return new WaitForSeconds(pathsFromKeys.Keys[Key].Duration);
         SceneManager.LoadScene("Present Model");
-        //StartCoroutine(delay());
+    }
+
+    public static IEnumerator SwitchScenes2()
+    {
+        yield return new WaitForSeconds(pathsFromKeys.Keys[Key].Duration);
         SceneManager.LoadScene("Present Video");
+        changeAllScene = false;
     }
 }

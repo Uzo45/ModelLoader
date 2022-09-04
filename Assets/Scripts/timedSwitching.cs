@@ -14,5 +14,11 @@ public class timedSwitching : MonoBehaviour
         {
             StartCoroutine(KeyManager.Switch2Scenes());
         }
+
+        if(KeyManager.changeAllScene)
+        {
+            StartCoroutine(KeyManager.SwitchScenes1());
+            StartCoroutine(KeyManager.SwitchScenes2());
+        }
     }
 }
