@@ -5,13 +5,21 @@
       "VidPath": "",
       "ModelPath": "C:\\Users\\Public\\JET\\3d models obj\\Chapel-0064.obj",
       "PicPath": "",
-      "Duration": 0
-    },
+      "AnimationPaths": {
+        "model": "",
+        "animation": ""
+      },
+        "Duration": 0
+      },
     "AlabamaHall-0023": {
       "PathType": 0,
       "VidPath": "",
       "ModelPath": "C:\\Users\\Public\\JET\\3d models obj\\AlabamaHall-0023.obj",
       "PicPath": "",
+      "AnimationPaths": {
+        "model": "",
+        "animation": ""
+      },
       "Duration": 0
     },
     "HuntingdonBuilding-0026": {
@@ -19,6 +27,10 @@
       "VidPath": "",
       "ModelPath": "C:\\Users\\Public\\JET\\3d models obj\\HuntingdonBuilding-0026.obj",
       "PicPath": "",
+      "AnimationPaths": {
+        "model": "",
+        "animation": ""
+      },
       "Duration": 0
     },
     "JohnA-AndrewMemorialHospital-0004": {
@@ -26,6 +38,10 @@
       "VidPath": "",
       "ModelPath": "C:\\Users\\Public\\JET\\3d models obj\\JohnA-AndrewMemorialHospital-0004.obj",
       "PicPath": "",
+      "AnimationPaths": {
+        "model": "",
+        "animation": ""
+      },
       "Duration": 0
     },
     "PorterHall-0013": {
@@ -33,6 +49,10 @@
       "VidPath": "",
       "ModelPath": "C:\\Users\\Public\\JET\\3d models obj\\PorterHall-0013.obj",
       "PicPath": "",
+      "AnimationPaths": {
+        "model": "",
+        "animation": ""
+      },
       "Duration": 0
     },
     "Robert R Taylor": {
@@ -40,6 +60,10 @@
       "VidPath": "",
       "ModelPath": "lol",
       "PicPath": "C:\\Users\\Public\\JET\\OriginalChapel\\Robert R Taylor.jpg",
+      "AnimationPaths": {
+        "model": "",
+        "animation": ""
+      },
       "Duration": 0
     },
     "MixedPicAndModel": {
@@ -47,6 +71,10 @@
       "VidPath": "",
       "ModelPath": "C:\\Users\\Public\\JET\\3d models obj\\Chapel-0064.obj",
       "PicPath": "C:\\Users\\Public\\JET\\OriginalChapel\\Robert R Taylor.jpg",
+      "AnimationPaths": {
+        "model": "",
+        "animation": ""
+      },
       "Duration": 1
     },
     "MixedModelAndVideo": {
@@ -54,6 +82,10 @@
       "VidPath": "C:\\Users\\uanae\\Videos\\Captures\\CielCornerMaxDamage.mp4",
       "ModelPath": "C:\\Users\\Public\\JET\\3d models obj\\Chapel-0064.obj",
       "PicPath": "",
+      "AnimationPaths": {
+        "model": "",
+        "animation": ""
+      },
       "Duration": 3
     },
     "Space Channel 5": {
@@ -61,6 +93,10 @@
       "VidPath": "C:\\Users\\uanae\\Videos\\Captures\\Space Channel 5 Part 2 2022-06-22 00-27-25.mp4",
       "ModelPath": "lol",
       "PicPath": "",
+      "AnimationPaths": {
+        "model": "",
+        "animation": ""
+      },
       "Duration": 3
     },
     "Melty Combo": {
@@ -68,6 +104,10 @@
       "VidPath": "C:\\Users\\uanae\\Videos\\Captures\\CielCornerMaxDamage.mp4",
       "ModelPath": "lol",
       "PicPath": "",
+      "AnimationPaths": {
+        "model": "",
+        "animation": ""
+      },
       "Duration": 3
     },
     "Melty Combo 2": {
@@ -75,7 +115,11 @@
       "VidPath": "C:\\Users\\uanae\\Videos\\Captures\\CielCornerMaxDamage.mp4",
       "ModelPath": "C:\\Users\\Public\\JET\\testing\\Neco_Arc.obj",
       "PicPath": "C:\\Users\\Public\\JET\\testing\\melty pic.jpg",
-      "Duration": 2
+      "AnimationPaths": {
+        "model": "",
+        "animation": ""
+      },
+      "Duration": 3
     }
   }
 }

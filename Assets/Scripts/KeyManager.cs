@@ -16,6 +16,7 @@ public class KeyManager : MonoBehaviour
     public static KeyParse pathsFromKeys = JsonConvert.DeserializeObject<KeyParse>(json);
     public static bool change2Scenes = false;
     public static bool changeAllScene = false;
+    public static bool multiswitch = true;
     public static string secondScene;
     //public static string ThirdScene;
 
@@ -31,12 +32,20 @@ public class KeyManager : MonoBehaviour
     }
 
     [System.Serializable]
+    public struct Animation
+    {
+        string model { get; set; }
+        string animation { get; set; }
+    }
+
+    [System.Serializable]
     public class Paths
     {
         public FileType PathType { get; set; }
         public string VidPath { get; set; }
         public string ModelPath { get; set; }
         public string PicPath { get; set; }
+        public Animation AnimationPaths { get; set; }
         public int Duration { get; set; }
     }
 
@@ -90,6 +99,7 @@ public class KeyManager : MonoBehaviour
     {
         yield return new WaitForSeconds(pathsFromKeys.Keys[Key].Duration);
         SceneManager.LoadScene("Present Model");
+        multiswitch = false;
     }
 
     public static IEnumerator SwitchScenes2()
@@ -97,5 +107,6 @@ public class KeyManager : MonoBehaviour
         yield return new WaitForSeconds(pathsFromKeys.Keys[Key].Duration);
         SceneManager.LoadScene("Present Video");
         changeAllScene = false;
+        multiswitch = true;
     }
 }
