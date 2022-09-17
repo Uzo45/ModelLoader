@@ -9,8 +9,8 @@
         "model": "",
         "animation": ""
       },
-        "Duration": 0
-      },
+      "Duration": 0
+    },
     "AlabamaHall-0023": {
       "PathType": 0,
       "VidPath": "",
@@ -118,6 +118,17 @@
       "AnimationPaths": {
         "model": "",
         "animation": ""
+      },
+      "Duration": 3
+    },
+    "animation": {
+      "PathType": 7,
+      "VidPath": "",
+      "ModelPath": "",
+      "PicPath": "",
+      "AnimationPaths": {
+        "model": "C:\\Users\\Public\\JET\\testing\\Ch36_nonPBR.fbx",
+        "animation": "C:\\Users\\Public\\JET\\testing\\Ch36_nonPBR@Talking.fbx"
       },
       "Duration": 3
     }

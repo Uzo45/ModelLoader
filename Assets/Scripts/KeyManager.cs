@@ -22,7 +22,7 @@ public class KeyManager : MonoBehaviour
 
     public enum FileType
     {
-        model, pic, vid, pic_model, pic_vid, model_vid, All
+        model, pic, vid, pic_model, pic_vid, model_vid, All, animation
     }
 
     [System.Serializable]
@@ -34,8 +34,8 @@ public class KeyManager : MonoBehaviour
     [System.Serializable]
     public struct Animation
     {
-        string model { get; set; }
-        string animation { get; set; }
+        public string model { get; set; }
+        public string animation { get; set; }
     }
 
     [System.Serializable]
@@ -84,6 +84,9 @@ public class KeyManager : MonoBehaviour
                 changeAllScene = true;
                 SceneManager.LoadScene("Present Pic");
                 //SwitchAllScenes();
+                break;
+            case FileType.animation:
+                SceneManager.LoadScene("Present Animation");
                 break;
         }
     }

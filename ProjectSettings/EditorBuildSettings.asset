@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Present Video.unity
     guid: 6485b35315be69f4fa3cd6b71f0a3d84
+  - enabled: 1
+    path: Assets/Scenes/Present Animation.unity
+    guid: 5c94a3651e24a4a4fb10ebf5fcc4877d
   m_configObjects: {}
