@@ -17,6 +17,8 @@ public class TestModelLoader : MonoBehaviour
         {
             fbx = ModelImporter.Importer.Import(fbxPath);
             fbx.transform.parent = Eve.transform;
+
+            //adjustment
             fbx.transform.localPosition = new Vector3(0.5f, 0, 0);
             fbx.transform.localScale = new Vector3(12.9937506f, 12.9937506f, 12.9937506f);
         }

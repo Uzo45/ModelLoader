@@ -919,6 +919,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Eve: {fileID: 1529818164}
+  time: {fileID: 11400000, guid: 09b5c889b9620464ca1a9aeeb8ca988b, type: 2}
 --- !u!4 &1350264408
 Transform:
   m_ObjectHideFlags: 0
