@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WheelController : MonoBehaviour
 {
     public GameObject holdsWheel;
-    RadialLayoutGroup wheel;
     static List<Transform> children;
     static Dictionary<Transform, string> steps = new Dictionary<Transform, string>();
-    public TextMeshProUGUI path;
+    public TextMeshProUGUI StepOutput;
 
     int countChild;
+
+    static Parser parser = new Parser(Application.dataPath + "/RadialLayoutGroup/json2.json");
+    List<Step> stuff = parser.stepsParse.Instruct["Somethingsteps"];
 
     bool shouldRotate = false;
     bool rotateForward = false;
@@ -20,37 +24,48 @@ public class WheelController : MonoBehaviour
     int distanceBetweenPoints;
     public float rotationSpeed;
 
+    void Awake()
+    {
+        ParseAndSetUpWheel();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        wheel = holdsWheel.GetComponent(typeof(RadialLayoutGroup)) as RadialLayoutGroup;
-        children = holdsWheel.GetComponentsInChildren<Transform>().ToList();
-        distanceBetweenPoints = 360 / (children.Count - 1);
-        Debug.Log(distanceBetweenPoints);
-
-        //setting all child for the wheel
-        int stepnum = 0;
-        foreach(var child in children)
-        {
-            steps.Add(child, "Step " + stepnum + ":");
-            stepnum++;
-            Debug.Log(child.name);
-        }
-
+        SetupDictionary();
         //set the wheel
         countChild = 1;
-        wheel.Offset = 360;
-        path.text = steps[children[countChild]];
-        children[countChild].localScale = new Vector3(2, 2, 2);
+        StepOutput.text = steps[children[countChild]];
+        children[countChild].localScale = new Vector3(1, 1, 1);
     }
 
     // Update is called once per frame
     void Update()
-    { 
+    {
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && !shouldRotate)
+        {
+            onClickBack();
+            Debug.Log("back");
+        }
+
+        if (Input.GetKeyDown(KeyCode.RightArrow) && !shouldRotate)
+        {
+            onClickForward();
+            Debug.Log("forward");
+        }
+
         if (shouldRotate && !rotateForward) //back
         {
 
-            wheel.Offset += 0.5f * rotationSpeed;
+            //wheel.Offset += 0.5f * rotationSpeed;
+
+            holdsWheel.transform.Rotate(Vector3.forward, 0.5f * rotationSpeed);
+            foreach(var icon in steps)
+            {
+                icon.Key.Rotate(Vector3.forward, -0.5f * rotationSpeed);
+            }
+
             degreesRotatedAlready += 0.5f * rotationSpeed;
             //Debug.Log(wheel.Offset);
 
@@ -60,9 +75,9 @@ public class WheelController : MonoBehaviour
                 rotateForward = false;
                 degreesRotatedAlready = 0;
 
-                path.text = steps[children[countChild]];
-                children[countChild].localScale = new Vector3(2, 2, 2);
-                children[countChild + 1].localScale = new Vector3(1, 1, 1);
+                StepOutput.text = steps[children[countChild]];
+                children[countChild].localScale = new Vector3(1, 1, 1);
+                children[countChild + 1].localScale = new Vector3(0.5f, 0.5f, 0.5f);
                 Debug.Log("Stopped rotation");
             }
 
@@ -70,7 +85,14 @@ public class WheelController : MonoBehaviour
         else if (shouldRotate && rotateForward) //forward
         {
 
-            wheel.Offset -= 0.5f * rotationSpeed;
+            //wheel.Offset -= 0.5f * rotationSpeed;
+            
+            holdsWheel.transform.Rotate(Vector3.forward, -0.5f * rotationSpeed);
+            foreach (var icon in steps)
+            {
+                icon.Key.Rotate(Vector3.forward, 0.5f * rotationSpeed);
+            }
+
             degreesRotatedAlready += 0.5f * rotationSpeed;
             //Debug.Log(wheel.Offset);
 
@@ -80,9 +102,9 @@ public class WheelController : MonoBehaviour
                 rotateForward = false;
                 degreesRotatedAlready = 0;
 
-                path.text = steps[children[countChild]];
-                children[countChild].localScale = new Vector3(2, 2, 2);
-                children[countChild - 1].localScale = new Vector3(1, 1, 1);
+                StepOutput.text = steps[children[countChild]];
+                children[countChild].localScale = new Vector3(1, 1, 1);
+                children[countChild - 1].localScale = new Vector3(0.5f, 0.5f, 0.5f);
                 Debug.Log("Stopped rotation");
             }
         }
@@ -109,6 +131,47 @@ public class WheelController : MonoBehaviour
             rotateForward = false;
             degreesRotatedAlready = 0;
         }
+    }
+
+    void ParseAndSetUpWheel()
+    {
+        GameObject newStep;
+
+        foreach (var i in stuff)
+        {
+            //give it an icon
+            if (File.Exists(i.iconFilePath))
+            {
+                newStep = new GameObject();
+                newStep.name = i.stepName;
+                newStep.transform.parent = holdsWheel.transform;
+
+                newStep.AddComponent<CanvasRenderer>();
+                newStep.AddComponent<Image>();
+                Image image = newStep.GetComponent<Image>();
+                Davinci.get().load(i.iconFilePath).into(image).start();
+            }
+            else
+            {
+                Debug.Log("The path does not exist");
+            }
+        }
+    }
+
+    void SetupDictionary()
+    {
+        children = holdsWheel.GetComponentsInChildren<Transform>().ToList();
+
+        //set each child as a key for its step name and instruction
+        for (int i = 1; i < children.Count; i++)
+        {
+            children[i].localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            steps.Add(children[i], stuff[i - 1].stepName + ": " + stuff[i - 1].stepInstruction);
+            Debug.Log(children[i].ToString());
+        }
+
+        distanceBetweenPoints = 360 / (children.Count - 1);
+        Debug.Log(distanceBetweenPoints);
     }
 }
 

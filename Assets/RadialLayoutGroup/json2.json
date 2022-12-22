@@ -1,0 +1,48 @@
+{
+  "Instruct": {
+    "Somethingsteps": [
+      {
+        "stepName": "Step 1",
+        "iconFilePath": "C:\\Users\\uanae\\Unity\\ModelLoader\\Assets\\RadialLayoutGroup\\DemoAssets\\BlueSprite.png",
+        "stepInstruction": "Step 1"
+      },
+      {
+        "stepName": "Step 2",
+        "iconFilePath": "C:\\Users\\uanae\\Unity\\ModelLoader\\Assets\\RadialLayoutGroup\\DemoAssets\\GreenSprite.png",
+        "stepInstruction": "Step 2"
+      },
+      {
+        "stepName": "Step 3",
+        "iconFilePath": "C:\\Users\\uanae\\Unity\\ModelLoader\\Assets\\RadialLayoutGroup\\DemoAssets\\RedSprite.png",
+        "stepInstruction": "Step 3"
+      },
+      {
+        "stepName": "Step 4",
+        "iconFilePath": "C:\\Users\\uanae\\Unity\\ModelLoader\\Assets\\RadialLayoutGroup\\DemoAssets\\YellowSprite.png",
+        "stepInstruction": "Step 4"
+      }
+    ],
+    "Anythingsteps": [
+      {
+        "stepName": "",
+        "iconFilePath": "",
+        "stepInstruction": ""
+      },
+      {
+        "stepName": "",
+        "iconFilePath": "",
+        "stepInstruction": ""
+      },
+      {
+        "stepName": "",
+        "iconFilePath": "",
+        "stepInstruction": ""
+      },
+      {
+        "stepName": "",
+        "iconFilePath": "",
+        "stepInstruction": ""
+      }
+    ]
+  }
+}
